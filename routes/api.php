@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\EmployeesController;
 use App\Http\Controllers\MobilesController;
+use App\Http\Controllers\TestController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,4 +41,8 @@ Route::controller(MobilesController::class)->group(function () {
     Route::post('mobile', 'store');
     Route::get('mobiles/{id}', 'show');
     Route::post('mobile/filter', 'mobileFilter');
+}); 
+
+Route::controller(TestController::class)->group(function () {
+    Route::get('all_mobiles', 'index');
 }); 
